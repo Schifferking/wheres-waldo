@@ -1,0 +1,13 @@
+.box {
+  --top: 0px;
+  --left: 0px;
+  --visibility: hidden;
+
+  position: absolute;
+  width: 20px;
+  height: 25px;
+  border: solid 2px #ff0000;
+  left: var(--left);
+  top: var(--top);
+  visibility: var(--visibility);
+}

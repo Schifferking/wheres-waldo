@@ -1,5 +1,7 @@
+import ImageContainer from "./components/ImageContainer/ImageContainer";
+
 function App() {
-  return <div></div>;
+  return <ImageContainer />;
 }
 
 export default App;
