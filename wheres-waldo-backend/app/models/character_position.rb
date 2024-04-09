@@ -1,0 +1,2 @@
+class CharacterPosition < ApplicationRecord
+end

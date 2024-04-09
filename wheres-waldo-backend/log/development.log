@@ -1,0 +1,71 @@
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCharacterPositions (20240402204855)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "character_positions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "x" integer, "y" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240402204855"]]
+  [1m[36mTRANSACTION (12.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-04-02 20:52:05.740510"], ["updated_at", "2024-04-02 20:52:05.740510"]]
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeColumnNamesToCharacterPositions (20240404003204)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acharacter_positions" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "x_start" integer DEFAULT NULL, "y" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[32mINSERT INTO "acharacter_positions" ("id","name","x_start","y","created_at","updated_at")
+                     SELECT "id","name","x","y","created_at","updated_at" FROM "character_positions"[0m
+  [1m[35m (12.6ms)[0m  [1m[35mDROP TABLE "character_positions"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "character_positions" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "x_start" integer DEFAULT NULL, "y" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "character_positions" ("id","name","x_start","y","created_at","updated_at")
+                     SELECT "id","name","x_start","y","created_at","updated_at" FROM "acharacter_positions"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "acharacter_positions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acharacter_positions" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "x_start" integer DEFAULT NULL, "y_start" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "acharacter_positions" ("id","name","x_start","y_start","created_at","updated_at")
+                     SELECT "id","name","x_start","y","created_at","updated_at" FROM "character_positions"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "character_positions"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "character_positions" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "x_start" integer DEFAULT NULL, "y_start" integer DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "character_positions" ("id","name","x_start","y_start","created_at","updated_at")
+                     SELECT "id","name","x_start","y_start","created_at","updated_at" FROM "acharacter_positions"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "acharacter_positions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240404003204"]]
+  [1m[36mTRANSACTION (16.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDetailsToCharacterPositions (20240404183407)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "character_positions" ADD "x_end" integer[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "character_positions" ADD "y_end" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (6.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20240404183407"]]
+  [1m[36mTRANSACTION (86.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacterPosition Create (6.8ms)[0m  [1m[32mINSERT INTO "character_positions" ("name", "x_start", "y_start", "created_at", "updated_at", "x_end", "y_end") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Waldo"], ["x_start", 557], ["y_start", 153], ["created_at", "2024-04-04 20:43:19.606346"], ["updated_at", "2024-04-04 20:43:19.606346"], ["x_end", 581], ["y_end", 195]]
+  [1m[36mTRANSACTION (8.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacterPosition Create (2.3ms)[0m  [1m[32mINSERT INTO "character_positions" ("name", "x_start", "y_start", "created_at", "updated_at", "x_end", "y_end") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Odlaw"], ["x_start", 263], ["y_start", 633], ["created_at", "2024-04-04 20:43:19.634103"], ["updated_at", "2024-04-04 20:43:19.634103"], ["x_end", 277], ["y_end", 666]]
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacterPosition Create (3.1ms)[0m  [1m[32mINSERT INTO "character_positions" ("name", "x_start", "y_start", "created_at", "updated_at", "x_end", "y_end") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Wenda"], ["x_start", 397], ["y_start", 627], ["created_at", "2024-04-04 20:43:19.657162"], ["updated_at", "2024-04-04 20:43:19.657162"], ["x_end", 411], ["y_end", 672]]
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCharacterPosition Create (2.4ms)[0m  [1m[32mINSERT INTO "character_positions" ("name", "x_start", "y_start", "created_at", "updated_at", "x_end", "y_end") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Wizard Whitebeard"], ["x_start", 914], ["y_start", 40], ["created_at", "2024-04-04 20:43:19.681337"], ["updated_at", "2024-04-04 20:43:19.681337"], ["x_end", 931], ["y_end", 66]]
+  [1m[36mTRANSACTION (8.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCharacterPosition Load (1.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
