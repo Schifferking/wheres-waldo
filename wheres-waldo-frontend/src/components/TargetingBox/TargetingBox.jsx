@@ -6,8 +6,8 @@ function TargetingBox({ onClick, boxStyle }) {
       className={styles["box"]}
       onClick={onClick}
       style={{
-        "--left": boxStyle.x,
-        "--top": boxStyle.y,
+        "--left": boxStyle.left,
+        "--top": boxStyle.top,
         "--visibility": boxStyle.isVisible ? "visible" : "hidden",
       }}
     ></div>

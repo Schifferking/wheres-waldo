@@ -6,16 +6,17 @@ import styles from "./ImageContainer.module.css";
 
 function ImageContainer() {
   const [boxStyle, setboxStyle] = useState({
-    x: "0px",
-    y: "0px",
+    left: "0px",
+    top: "0px",
     isVisible: false,
   });
 
+  const [offset, setOffest] = useState(15);
+
   const onClick = (e) => {
-    const offset = 15;
     setboxStyle({
-      x: `${e.clientX - offset}px`,
-      y: `${e.clientY - offset}px`,
+      left: `${e.clientX - offset}px`,
+      top: `${e.clientY - offset}px`,
       isVisible: true,
     });
   };
@@ -29,9 +30,12 @@ function ImageContainer() {
         alt="Wheres Waldo? - Department Store"
       />
       <TargetingBox onClick={onclick} boxStyle={boxStyle} />
-      <CharactersMenu boxStyle={boxStyle} />
+      <CharactersMenu boxStyle={boxStyle} offset={offset} />
     </div>
   );
 }
+
+// to-do
+// pass CharacterPositions to CharactersMenu
 
 export default ImageContainer;
