@@ -8,6 +8,7 @@
   height: 75px;
   border: 2px solid;
   overflow: auto;
+  background-color: #ffffff;
   left: var(--left);
   top: var(--top);
   visibility: var(--visibility);
@@ -17,7 +18,6 @@ ul {
   margin: 0px;
   padding-left: 0px;
   list-style-type: none;
-  background-color: #ffffff;
 }
 
 li {

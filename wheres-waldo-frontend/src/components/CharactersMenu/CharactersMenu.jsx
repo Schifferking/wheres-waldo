@@ -1,7 +1,6 @@
 import styles from "./CharactersMenu.module.css";
 
-function CharactersMenu({ characterPositions, boxStyle, offset }) {
-  const characters = ["Waldo", "Odlaw", "Wilma", "Wizard Whitebeard"];
+function CharactersMenu(props) {
   const getNumberFromProperty = (property) => {
     const numberInString = property.match(/(\d+)/)[0];
     return Number(numberInString);
@@ -12,7 +11,7 @@ function CharactersMenu({ characterPositions, boxStyle, offset }) {
     const space = 3;
     const boxWidth = 20 + boxBorderWith * 2;
     const spaceBetweenComponents = boxWidth + space;
-    const boxLeft = getNumberFromProperty(boxStyle.left);
+    const boxLeft = getNumberFromProperty(props.boxStyle.left);
     const newLeft = boxLeft + spaceBetweenComponents;
     return String(newLeft) + "px";
   };
@@ -21,28 +20,66 @@ function CharactersMenu({ characterPositions, boxStyle, offset }) {
     return num >= rangeStart && num <= rangeEnd;
   };
 
-  const validateCharacter = (character) => {
-    const x = getNumberFromProperty(boxStyle.left) + offset;
-    const y = getNumberFromProperty(boxStyle.top) + offset;
-    // get character x ranges
-    // get character y ranges
-    // replace numbers with actual character ranges
-    return isNumberInRange(x, 0, 1000) && isNumberInRange(y, 0, 1000);
+  const getCharacterEntry = (character) => {
+    return props.characterPositions.find((cp) => cp.name === character);
   };
+
+  const isCharacterFound = (character) => {
+    const x = getNumberFromProperty(props.boxStyle.left) + props.offset;
+    const y = getNumberFromProperty(props.boxStyle.top) + props.offset;
+    const characterEntry = getCharacterEntry(character);
+    const result =
+      isNumberInRange(x, characterEntry.x_start, characterEntry.x_end) &&
+      isNumberInRange(y, characterEntry.y_start, characterEntry.y_end);
+
+    return result;
+  };
+
+  const updateCharacters = (foundCharacter) => {
+    props.setCharacters(
+      props.characters.map((character) => {
+        if (character.name === foundCharacter) {
+          return {
+            ...character,
+            found: true,
+            left: props.boxStyle.left,
+            top: props.boxStyle.top,
+          };
+        } else {
+          return character;
+        }
+      })
+    );
+  };
+
+  const handleClick = (character) => {
+    const result = isCharacterFound(character);
+    if (result) {
+      updateCharacters(character);
+    }
+
+    props.setCharacterSearched(character);
+    props.setIsCharacterFound(result);
+    props.setIsImageClicked(false);
+  };
+
+  const hiddenCharacters = props.characters.filter(
+    (character) => character.found === false
+  );
 
   return (
     <div
       className={styles["pop-up"]}
       style={{
         "--left": calculateLeftProperty(),
-        "--top": boxStyle.top,
-        "--visibility": boxStyle.isVisible ? "visible" : "hidden",
+        "--top": props.boxStyle.top,
+        "--visibility": props.boxStyle.isVisible ? "visible" : "hidden",
       }}
     >
       <ul>
-        {characters.map((character) => (
-          <li key={character} onClick={() => validateCharacter(character)}>
-            {character}
+        {hiddenCharacters.map((character) => (
+          <li key={character.name} onClick={() => handleClick(character.name)}>
+            {character.name}
           </li>
         ))}
       </ul>
@@ -52,7 +89,5 @@ function CharactersMenu({ characterPositions, boxStyle, offset }) {
 
 // to-do
 // add prop-types
-// finish validateCharacter function
-// note: consider to generate characters array based on characterPositions
 
 export default CharactersMenu;
