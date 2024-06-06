@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_04_183407) do
+ActiveRecord::Schema[7.0].define(version: 2024_05_26_003541) do
   create_table "character_positions", force: :cascade do |t|
     t.string "name"
     t.integer "x_start"
@@ -19,6 +19,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_04_183407) do
     t.datetime "updated_at", null: false
     t.integer "x_end"
     t.integer "y_end"
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.string "user_name"
+    t.float "time_elapsed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

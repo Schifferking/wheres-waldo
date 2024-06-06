@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TargetingBox from "../TargetingBox/TargetingBox";
 import CharactersMenu from "../CharactersMenu/CharactersMenu";
 import image from "../../wheres-waldo-department-store.png";
 import styles from "./ImageContainer.module.css";
 
-function ImageContainer({ characterPositions }) {
+function ImageContainer({
+  characterPositions,
+  setStopwatchRunning,
+  channelRef,
+}) {
   const [boxStyle, setboxStyle] = useState({
     left: "0px",
     top: "0px",
@@ -21,6 +25,7 @@ function ImageContainer({ characterPositions }) {
   const [offset, setOffest] = useState(15);
   const [isImageClicked, setIsImageClicked] = useState(false);
   const [isCharacterFound, setIsCharacterFound] = useState(true);
+  const [areAllCharactersFound, setAllCharactersFound] = useState(false);
   const [characterSearched, setCharacterSearched] = useState("");
   const charactersFound = characters.filter((character) => character.found);
   const onClick = (e) => {
@@ -33,12 +38,22 @@ function ImageContainer({ characterPositions }) {
     setIsImageClicked(true);
   };
 
+  useEffect(() => {
+    const charactersFoundLength = charactersFound.length;
+    if (charactersFoundLength === 4 && !areAllCharactersFound) {
+      setStopwatchRunning(false);
+      setAllCharactersFound(true);
+      channelRef.current.send({ message: "done" });
+    }
+  }, [charactersFound]);
+
   return (
     <div>
       <img
         className={styles["image"]}
         src={image}
         onClick={onClick}
+        onLoad={() => setStopwatchRunning(true)}
         alt="Wheres Waldo? - Department Store"
       />
       {charactersFound.length < 4 && isImageClicked ? (

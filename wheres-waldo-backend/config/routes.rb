@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :character_positions, only: [:index]
+  mount ActionCable.server => '/cable'
 end
