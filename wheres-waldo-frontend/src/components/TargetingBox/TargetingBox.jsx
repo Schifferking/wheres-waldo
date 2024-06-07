@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./TargetingBox.module.css";
 
 function TargetingBox({ onClick, boxStyle }) {
@@ -14,7 +15,13 @@ function TargetingBox({ onClick, boxStyle }) {
   );
 }
 
-// to-do
-// add proptTypes
+TargetingBox.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  boxStyle: PropTypes.exact({
+    left: PropTypes.string,
+    top: PropTypes.string,
+    isVisible: PropTypes.bool,
+  }).isRequired,
+};
 
 export default TargetingBox;

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
 import styles from "./BestScoreNameModal.module.css";
 import Modal from "../Modal/Modal";
 
@@ -55,7 +56,10 @@ const BestScoreNameModal = ({ isOpen, onSubmit, onClose }) => {
   );
 };
 
-// to-do
-// add proptypes
+BestScoreNameModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default BestScoreNameModal;

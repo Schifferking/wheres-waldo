@@ -13182,3 +13182,241 @@ TimeChannel is transmitting the subscription confirmation
 TimeChannel is streaming from time_channel
 TimeChannel is transmitting the subscription confirmation
 TimeChannel is streaming from time_channel
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 14:57:28 -0600
+TimeChannel stopped streaming from time_channel
+Started GET "/cable" for ::1 at 2024-06-06 14:57:32 -0600
+Started GET "/character_positions" for ::1 at 2024-06-06 14:57:33 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 14:57:33 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 0.7ms | Allocations: 3867)
+
+
+Started GET "/character_positions" for ::1 at 2024-06-06 14:57:34 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 1252)
+
+
+Started GET "/cable" for ::1 at 2024-06-06 14:57:41 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 14:57:41 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TimeChannel is transmitting the subscription confirmation
+TimeChannel is streaming from time_channel
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 15:16:13 -0600
+TimeChannel stopped streaming from time_channel
+Started GET "/cable" for ::1 at 2024-06-06 17:13:47 -0600
+Started GET "/character_positions" for ::1 at 2024-06-06 17:13:47 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable" for ::1 at 2024-06-06 17:13:52 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:13:52 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:13:52 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/cable" for ::1 at 2024-06-06 17:13:53 -0600
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 17:13:53 -0600
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 17:13:53 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:13:53 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+TimeChannel is transmitting the subscription confirmation
+TimeChannel is streaming from time_channel
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (46.5ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 164ms (Views: 42.8ms | ActiveRecord: 47.6ms | Allocations: 9170)
+
+
+Started GET "/character_positions" for ::1 at 2024-06-06 17:13:53 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 1253)
+
+
+  [1m[36mCharacterPosition Load (0.3ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 17:30:13 -0600
+TimeChannel stopped streaming from time_channel
+Started GET "/cable" for ::1 at 2024-06-06 17:30:15 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:30:15 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/character_positions" for ::1 at 2024-06-06 17:30:15 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.9ms | Allocations: 1431)
+
+
+Started GET "/character_positions" for ::1 at 2024-06-06 17:30:15 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms | Allocations: 1252)
+
+
+TimeChannel is transmitting the subscription confirmation
+TimeChannel is streaming from time_channel
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 17:34:01 -0600
+TimeChannel stopped streaming from time_channel
+Started GET "/cable" for ::1 at 2024-06-06 17:34:03 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:34:03 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/character_positions" for ::1 at 2024-06-06 17:34:03 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.2ms | Allocations: 1262)
+
+
+Started GET "/character_positions" for ::1 at 2024-06-06 17:34:03 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 1252)
+
+
+TimeChannel is transmitting the subscription confirmation
+TimeChannel is streaming from time_channel
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 17:35:19 -0600
+TimeChannel stopped streaming from time_channel
+Started GET "/cable" for ::1 at 2024-06-06 17:35:21 -0600
+Started GET "/character_positions" for ::1 at 2024-06-06 17:35:21 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:35:21 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.2ms | Allocations: 1262)
+
+
+Started GET "/character_positions" for ::1 at 2024-06-06 17:35:21 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.2ms | Allocations: 1252)
+
+
+TimeChannel is transmitting the subscription confirmation
+TimeChannel is streaming from time_channel
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 17:36:52 -0600
+TimeChannel stopped streaming from time_channel
+Started GET "/cable" for ::1 at 2024-06-06 17:36:54 -0600
+Started GET "/character_positions" for ::1 at 2024-06-06 17:36:54 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:36:54 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.2ms | Allocations: 1252)
+
+
+Started GET "/character_positions" for ::1 at 2024-06-06 17:36:54 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 1252)
+
+
+TimeChannel is transmitting the subscription confirmation
+TimeChannel is streaming from time_channel
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 17:38:52 -0600
+TimeChannel stopped streaming from time_channel
+Started GET "/cable" for ::1 at 2024-06-06 17:38:54 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:38:54 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/character_positions" for ::1 at 2024-06-06 17:38:54 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.3ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 16.2ms | ActiveRecord: 0.3ms | Allocations: 1252)
+
+
+Started GET "/character_positions" for ::1 at 2024-06-06 17:38:54 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (2.5ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 2.5ms | Allocations: 1252)
+
+
+TimeChannel is transmitting the subscription confirmation
+TimeChannel is streaming from time_channel
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 17:39:27 -0600
+TimeChannel stopped streaming from time_channel
+Started GET "/cable" for ::1 at 2024-06-06 17:39:30 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:39:30 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/character_positions" for ::1 at 2024-06-06 17:39:30 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.2ms | Allocations: 1262)
+
+
+Started GET "/character_positions" for ::1 at 2024-06-06 17:39:30 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms | Allocations: 1252)
+
+
+TimeChannel is transmitting the subscription confirmation
+TimeChannel is streaming from time_channel
+TimeChannel#receive({"message"=>"done"})
+  [1m[36mScore Load (187.5ms)[0m  [1m[34mSELECT "scores".* FROM "scores" ORDER BY "scores"."time_elapsed" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/channels/time_channel.rb:48:in `map'
+[ActionCable] Broadcasting to time_channel: [{:name=>"anonymous user", :time_elapsed=>5.633584812}, {:name=>"Bugs Bunny", :time_elapsed=>8.000112776}, {:name=>"Brandon Sanderson", :time_elapsed=>11.800145746}, {:name=>"Dan Wells", :time_elapsed=>16.546540873}, {:name=>"Batman", :time_elapsed=>17.660003603}]
+TimeChannel transmitting [{"name"=>"anonymous user", "time_elapsed"=>5.633584812}, {"name"=>"Bugs Bunny", "time_elapsed"=>8.000112776}, {"name"=>"Brandon Sanderson", "time_elapsed"=>11.800145746}, {"name"=>"Dan Wells", "time_elapsed"=>16.546540873}, {"name"=>"Batman", "time_elapsed"=>17.660003603}] (via streamed from time_channel)
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 17:41:29 -0600
+TimeChannel stopped streaming from time_channel
+Started GET "/cable" for ::1 at 2024-06-06 17:41:32 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:41:32 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/character_positions" for ::1 at 2024-06-06 17:41:32 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.2ms | Allocations: 1255)
+
+
+Started GET "/character_positions" for ::1 at 2024-06-06 17:41:32 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.2ms | Allocations: 1252)
+
+
+TimeChannel is transmitting the subscription confirmation
+TimeChannel is streaming from time_channel
+TimeChannel#receive({"message"=>"done"})
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT "scores".* FROM "scores" ORDER BY "scores"."time_elapsed" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/channels/time_channel.rb:48:in `map'
+[ActionCable] Broadcasting to time_channel: [{:name=>"anonymous user", :time_elapsed=>5.633584812}, {:name=>"Bugs Bunny", :time_elapsed=>8.000112776}, {:name=>"Brandon Sanderson", :time_elapsed=>11.800145746}, {:name=>"Dan Wells", :time_elapsed=>16.546540873}, {:name=>"Batman", :time_elapsed=>17.660003603}]
+TimeChannel transmitting [{"name"=>"anonymous user", "time_elapsed"=>5.633584812}, {"name"=>"Bugs Bunny", "time_elapsed"=>8.000112776}, {"name"=>"Brandon Sanderson", "time_elapsed"=>11.800145746}, {"name"=>"Dan Wells", "time_elapsed"=>16.546540873}, {"name"=>"Batman", "time_elapsed"=>17.660003603}] (via streamed from time_channel)
+Finished "/cable" [WebSocket] for ::1 at 2024-06-06 17:43:08 -0600
+TimeChannel stopped streaming from time_channel
+Started GET "/cable" for ::1 at 2024-06-06 17:43:11 -0600
+Started GET "/cable" [WebSocket] for ::1 at 2024-06-06 17:43:11 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/character_positions" for ::1 at 2024-06-06 17:43:11 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.2ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 1252)
+
+
+Started GET "/character_positions" for ::1 at 2024-06-06 17:43:11 -0600
+Processing by CharacterPositionsController#index as */*
+  [1m[36mCharacterPosition Load (0.3ms)[0m  [1m[34mSELECT "character_positions".* FROM "character_positions"[0m
+  ↳ app/controllers/character_positions_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.3ms | Allocations: 1252)
+
+
+TimeChannel is transmitting the subscription confirmation
+TimeChannel is streaming from time_channel
+TimeChannel#receive({"message"=>"done"})
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" ORDER BY "scores"."time_elapsed" ASC LIMIT ?[0m  [["LIMIT", 5]]
+  ↳ app/channels/time_channel.rb:48:in `map'
+[ActionCable] Broadcasting to time_channel: [{:name=>"anonymous user", :time_elapsed=>5.633584812}, {:name=>"Bugs Bunny", :time_elapsed=>8.000112776}, {:name=>"Brandon Sanderson", :time_elapsed=>11.800145746}, {:name=>"Dan Wells", :time_elapsed=>16.546540873}, {:name=>"Batman", :time_elapsed=>17.660003603}]
+TimeChannel transmitting [{"name"=>"anonymous user", "time_elapsed"=>5.633584812}, {"name"=>"Bugs Bunny", "time_elapsed"=>8.000112776}, {"name"=>"Brandon Sanderson", "time_elapsed"=>11.800145746}, {"name"=>"Dan Wells", "time_elapsed"=>16.546540873}, {"name"=>"Batman", "time_elapsed"=>17.660003603}] (via streamed from time_channel)

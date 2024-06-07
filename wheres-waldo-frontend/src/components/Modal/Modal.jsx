@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
 
 const Modal = ({ isOpen, hasCloseButton, onClose, children }) => {
   const [isModalOpen, setModalOpen] = useState(isOpen);
@@ -46,7 +47,11 @@ const Modal = ({ isOpen, hasCloseButton, onClose, children }) => {
   );
 };
 
-// to-do
-// add proptypes
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  hasCloseButton: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  children: PropTypes.node,
+};
 
 export default Modal;

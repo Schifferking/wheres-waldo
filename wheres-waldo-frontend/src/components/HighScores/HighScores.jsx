@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function HighScores({ bestScores }) {
   return (
     <div className="high-scores-container">
@@ -24,7 +26,8 @@ function HighScores({ bestScores }) {
   );
 }
 
-export default HighScores;
+HighScores.propTypes = {
+  bestScores: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
-// to-do
-// add proptypes
+export default HighScores;

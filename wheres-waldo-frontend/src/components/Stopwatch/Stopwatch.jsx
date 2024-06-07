@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import PropTypes from "prop-types";
 
 function Stopwatch({ stopwatchRunning }) {
   const [time, setTime] = useState(0);
@@ -28,7 +29,8 @@ function Stopwatch({ stopwatchRunning }) {
   );
 }
 
-export default Stopwatch;
+Stopwatch.propTypes = {
+  stopwatchRunning: PropTypes.bool.isRequired,
+};
 
-// to-do
-// add prop-types
+export default Stopwatch;

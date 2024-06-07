@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./CharactersMenu.module.css";
 
 function CharactersMenu(props) {
@@ -87,7 +88,18 @@ function CharactersMenu(props) {
   );
 }
 
-// to-do
-// add prop-types
+CharactersMenu.propTypes = {
+  boxStyle: PropTypes.exact({
+    left: PropTypes.string,
+    top: PropTypes.string,
+    isVisible: PropTypes.bool,
+  }).isRequired,
+  offset: PropTypes.number.isRequired,
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setCharacters: PropTypes.func.isRequired,
+  setCharacterSearched: PropTypes.func.isRequired,
+  setIsCharacterFound: PropTypes.func.isRequired,
+  setIsImageClicked: PropTypes.func.isRequired,
+};
 
 export default CharactersMenu;

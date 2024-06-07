@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import TargetingBox from "../TargetingBox/TargetingBox";
 import CharactersMenu from "../CharactersMenu/CharactersMenu";
 import image from "../../wheres-waldo-department-store.png";
@@ -58,7 +59,7 @@ function ImageContainer({
       />
       {charactersFound.length < 4 && isImageClicked ? (
         <>
-          <TargetingBox onClick={onclick} boxStyle={boxStyle} />
+          <TargetingBox onClick={onClick} boxStyle={boxStyle} />
           <CharactersMenu
             boxStyle={boxStyle}
             offset={offset}
@@ -96,8 +97,12 @@ function ImageContainer({
   );
 }
 
-// to-do
-// add prop-types
+ImageContainer.propTypes = {
+  characterPositions: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setStopwatchRunning: PropTypes.func.isRequired,
+  channelRef: PropTypes.object.isRequired,
+};
+
 // note: consider to generate characters array based on characterPositions
 
 export default ImageContainer;
