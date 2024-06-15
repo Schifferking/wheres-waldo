@@ -26,8 +26,8 @@ function CharactersMenu(props) {
   };
 
   const isCharacterFound = (character) => {
-    const x = getNumberFromProperty(props.boxStyle.left) + props.offset;
-    const y = getNumberFromProperty(props.boxStyle.top) + props.offset;
+    const x = props.imageClickCoordinates.x;
+    const y = props.imageClickCoordinates.y;
     const characterEntry = getCharacterEntry(character);
     const result =
       isNumberInRange(x, characterEntry.x_start, characterEntry.x_end) &&
@@ -100,6 +100,10 @@ CharactersMenu.propTypes = {
   setCharacterSearched: PropTypes.func.isRequired,
   setIsCharacterFound: PropTypes.func.isRequired,
   setIsImageClicked: PropTypes.func.isRequired,
+  imageClickCoordinates: PropTypes.exact({
+    x: PropTypes.number,
+    y: PropTypes.number,
+  }).isRequired,
 };
 
 export default CharactersMenu;

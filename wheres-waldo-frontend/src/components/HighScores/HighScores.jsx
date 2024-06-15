@@ -1,14 +1,15 @@
 import PropTypes from "prop-types";
+import styles from "./HighScores.module.css";
 
 function HighScores({ bestScores }) {
   return (
-    <div className="high-scores-container">
-      <table className="high-scores">
-        <caption>Game's high scores</caption>
+    <div className={styles["table-container"]}>
+      <table className={styles["high-scores"]}>
+        <caption>High scores</caption>
         <thead>
           <tr>
             <th>Name</th>
-            <th>Score</th>
+            <th>Score (time in seconds)</th>
           </tr>
         </thead>
         <tbody>
@@ -16,7 +17,9 @@ function HighScores({ bestScores }) {
             return (
               <tr key={bestScore["time_elapsed"]}>
                 <td>{bestScore.name}</td>
-                <td>{bestScore["time_elapsed"].toFixed(2)}</td>
+                <td className={styles["number"]}>
+                  {bestScore["time_elapsed"].toFixed(2)}
+                </td>
               </tr>
             );
           })}

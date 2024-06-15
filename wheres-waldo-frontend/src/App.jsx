@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import useCharacterPositions from "./hooks/useCharacterPositions";
 import { CableContext } from "../src/context/cable";
+import "./App.css";
 import ImageContainer from "./components/ImageContainer/ImageContainer";
 import Stopwatch from "./components/Stopwatch/Stopwatch";
 import BestScoreNameModal from "./components/BestScoreNameModal/BestScoreNameModal";
@@ -61,7 +62,8 @@ function App() {
   if (error) return <p>A network error was encountered.</p>;
   if (loading) return <p>Loading...</p>;
   return (
-    <div>
+    <div className="app-container">
+      <h1>Just another "Where's Waldo?" app</h1>
       <Stopwatch stopwatchRunning={stopwatchRunning} />
       <ImageContainer
         characterPositions={characterPositions}

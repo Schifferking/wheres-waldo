@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import TargetingBox from "../TargetingBox/TargetingBox";
 import CharactersMenu from "../CharactersMenu/CharactersMenu";
@@ -28,15 +28,45 @@ function ImageContainer({
   const [isCharacterFound, setIsCharacterFound] = useState(true);
   const [areAllCharactersFound, setAllCharactersFound] = useState(false);
   const [characterSearched, setCharacterSearched] = useState("");
+  const [isClicked, setIsClicked] = useState(false);
+  const imageRef = useRef(null);
+  const mousePageClickCoordinatesRef = useRef(null);
+  const mouseClientClickCoordinatesRef = useRef(null);
   const charactersFound = characters.filter((character) => character.found);
-  const onClick = (e) => {
-    setboxStyle({
-      left: `${e.clientX - offset}px`,
-      top: `${e.clientY - offset}px`,
-      isVisible: true,
-    });
+  const updateIsClicked = () => {
+    if (isClicked) {
+      setIsClicked(false);
+    } else {
+      setIsClicked(true);
+    }
+  };
 
-    setIsImageClicked(true);
+  const isCoordinatesValid = (coordinates, imageRect) => {
+    /* This is a value independent of current scrolling position */
+    const actualBottom = imageRect.bottom + window.scrollY;
+    return (
+      imageRect.left <= coordinates.x &&
+      coordinates.x <= imageRect.right &&
+      imageRect.top <= coordinates.y &&
+      coordinates.y <= actualBottom
+    );
+  };
+
+  const onClick = (e) => {
+    const imageRect = imageRef.current.getBoundingClientRect();
+    const coordinates = { x: e.pageX, y: e.pageY };
+    const areCoordinatesValid = isCoordinatesValid(coordinates, imageRect);
+    if (areCoordinatesValid) {
+      const imageClickCoordinates = {
+        x: e.clientX - imageRect.x,
+        y: e.clientY - imageRect.y,
+      };
+
+      updateIsClicked();
+      mousePageClickCoordinatesRef.current = coordinates;
+      mouseClientClickCoordinatesRef.current = imageClickCoordinates;
+      setIsImageClicked(true);
+    }
   };
 
   useEffect(() => {
@@ -48,8 +78,24 @@ function ImageContainer({
     }
   }, [charactersFound]);
 
+  useEffect(() => {
+    /* change the condition of executing this effect before updating 
+       boxStyle and assign the x and y values from getBoundingClientRect
+       in refs
+    */
+    if (mousePageClickCoordinatesRef.current) {
+      const newLeft = mousePageClickCoordinatesRef.current.x - offset;
+      const newTop = mousePageClickCoordinatesRef.current.y - offset;
+      setboxStyle({
+        left: `${newLeft}px`,
+        top: `${newTop}px`,
+        isVisible: true,
+      });
+    }
+  }, [isClicked]);
+
   return (
-    <div>
+    <div className={styles["image-container"]} ref={imageRef}>
       <img
         className={styles["image"]}
         src={image}
@@ -70,6 +116,7 @@ function ImageContainer({
             charactersFound={charactersFound}
             setIsCharacterFound={setIsCharacterFound}
             setCharacterSearched={setCharacterSearched}
+            imageClickCoordinates={mouseClientClickCoordinatesRef.current}
           />
         </>
       ) : null}

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
+import styles from "./Stopwatch.module.css";
 
 function Stopwatch({ stopwatchRunning }) {
   const [time, setTime] = useState(0);
@@ -21,7 +22,8 @@ function Stopwatch({ stopwatchRunning }) {
   }, [time]);
 
   return (
-    <div>
+    <div className={styles["stopwatch-container"]}>
+      <span>Time: </span>
       <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
       <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
       <span>{miliseconds}</span>

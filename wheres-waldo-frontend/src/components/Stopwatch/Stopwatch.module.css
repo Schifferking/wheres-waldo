@@ -1,0 +1,8 @@
+.stopwatch-container {
+  border: 2px solid #cccccc;
+  padding: 0.5rem;
+}
+
+span {
+  font-size: 1.4em;
+}
