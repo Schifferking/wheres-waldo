@@ -26,9 +26,7 @@ Another important feature, compared to previous projects is the use of both back
 ## to-do
 
 - Refactor (maybe use reducers to decrease the amount of state variables)
-- add logic to let mobile users play the game (also update markers position when changing screen size)
-- add footer
-- consider placing high scores table between score and image
+- add logic to let mobile users play the game
 - improve styling
 - add more photos and let the user select one before starting
 - add an optional "how to play" section before starting a game

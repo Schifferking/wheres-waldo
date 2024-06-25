@@ -65,6 +65,7 @@ function App() {
     <div className="app-container">
       <h1>Just another "Where's Waldo?" app</h1>
       <Stopwatch stopwatchRunning={stopwatchRunning} />
+      {bestScores && <HighScores bestScores={bestScores} />}
       <ImageContainer
         characterPositions={characterPositions}
         setStopwatchRunning={setStopwatchRunning}
@@ -77,7 +78,10 @@ function App() {
           onClose={handleCloseBestScoreNameModal}
         />
       }
-      {bestScores && <HighScores bestScores={bestScores} />}
+      <footer>
+        <div>Copyright © 2024 Schifferking</div>
+        <div>Just another "Where's Waldo?" app</div>
+      </footer>
     </div>
   );
 }

@@ -11,6 +11,7 @@ th {
   border: 1px solid #cccccc;
   padding: 0.5rem;
   text-align: left;
+  font-family: "Cousine", monospace;
 }
 
 .number {

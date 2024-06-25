@@ -1,8 +1,13 @@
 .stopwatch-container {
   border: 2px solid #cccccc;
+  background-color: #fbfbfb;
   padding: 0.5rem;
 }
 
 span {
   font-size: 1.4em;
+}
+
+span:not(:first-child) {
+  font-family: "Kode Mono", monospace;
 }

@@ -79,13 +79,18 @@ function ImageContainer({
   }, [charactersFound]);
 
   useEffect(() => {
-    /* change the condition of executing this effect before updating 
-       boxStyle and assign the x and y values from getBoundingClientRect
-       in refs
-    */
     if (mousePageClickCoordinatesRef.current) {
-      const newLeft = mousePageClickCoordinatesRef.current.x - offset;
-      const newTop = mousePageClickCoordinatesRef.current.y - offset;
+      const imageRect = imageRef.current.getBoundingClientRect();
+      const newLeft =
+        mousePageClickCoordinatesRef.current.x -
+        imageRect.x -
+        window.scrollX -
+        offset;
+      const newTop =
+        mousePageClickCoordinatesRef.current.y -
+        imageRect.y -
+        window.scrollY -
+        offset;
       setboxStyle({
         left: `${newLeft}px`,
         top: `${newTop}px`,
